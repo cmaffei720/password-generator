@@ -12,18 +12,30 @@ function writePassword() {
 
 var passwordLength = prompt("How long do you want your password to be? Must be between 8 and 128 characters", "number")
 
-if (passwordLength > 128) {
-  alert("Please choose a password below 128 characters. Refresh the page to start again")
-  var passwordLength = prompt("How long do you want your password to be? Must be between 8 and 128 characters")
-}
-else if (passwordLength < 8) {
-  alert("Please choose a password larger than 8 characters. Refresh the page to start again")
-  var passwordLength = prompt("How long do you want your password to be? Must be between 8 and 128 characters")
-}
+
+if (passwordLength > 128 || passwordLength < 8) {
+ alert("Please choose a password length of at least 8 characters and at most 128 characters. Try again")
+  var passwordLength = prompt("How long do you want your password to be? Must be over 8 characters and less than 128 characters")
+  if (passwordLength > 128 || passwordLength < 8) {
+   alert("Please choose a password length of at least 8 characters and at most 128 characters. Try again")
+  var passwordLength = prompt("How long do you want your password to be? Must be at least 8 characters and at most 128 characters")
+  }
+  }
 
 
+//function testLength (passwordLength) {
+ // if (passwordLength < 8 || passwordLength > 128)
+  //{alert("password is below 8 characters or over 128 characters. Please try again")
+ // var passwordLength = prompt("How long do you want your password to be? Must be between 8 and 128 characters", "number2")
+ // testLength(passwordLength)}
+ // return passwordLength
+//}
 
-console.log(passwordLength)
+
+//testLength (passwordLength)
+console.log (passwordLength)
+
+//console.log(passwordLength)
 
 var passwordLowCharacters = confirm("Would you like your password to include lowercase characters?")
 var passwordUpCharacters = confirm("Would you like your password to include uppercase characters?")
@@ -32,6 +44,10 @@ var passwordSpecialCharacters = confirm("Would you like your password to include
 
 if (passwordLowCharacters === false && passwordUpCharacters === false && passwordNumericCharacters === false && passwordSpecialCharacters === false) {
 alert("You must choose one type of character in your password. Please refresh the page and try again.")}
+
+if (passwordLength > 128 || passwordLength < 8) {
+  alert("Your password must be between 8 and 128 characters. Please try again.")
+}
 
 console.log(passwordLowCharacters)
 console.log(passwordUpCharacters)
@@ -49,6 +65,8 @@ var lowerNumber = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 //length 36
 var upperNumber = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 //var specCharacters = ["@","#","%","<","^","<","\"]
+//this does not work, workaround for special characters is the makeid functions below
+
 
 function makeid(length) {
   var result           = '';
@@ -115,6 +133,9 @@ function makeid5(length) {
 makeid5(1)
  var specCharacter5 = makeid5(1)
 console.log(makeid5(1))
+
+var allRandomSpec = [specCharacter, specCharacter2, specCharacter3, specCharacter4, specCharacter5]
+
 
 function generatePassword (passwordLength, passwordLowCharacters, passwordUpCharacters, passwordNumericCharacters, passwordSpecialCharacters) {
   var passwordContent = ["a","b","c"]
@@ -219,11 +240,11 @@ function generatePassword (passwordLength, passwordLowCharacters, passwordUpChar
     passwordContent[i+4] = numericCharacters[Math.floor(Math.random() * (10))]
   }
     else if (passwordLowCharacters === false && passwordUpCharacters === false && passwordNumericCharacters === false && passwordSpecialCharacters === true){
-      passwordContent[i] = specCharacter
-      passwordContent[i+1] = specCharacter2
-      passwordContent[i+2] = specCharacter3
-      passwordContent[i+3] = specCharacter4
-      passwordContent[i+4] = specCharacter5
+      passwordContent[i] = allRandomSpec[Math.floor(Math.random() * (5))]
+      passwordContent[i+1] = allRandomSpec[Math.floor(Math.random() * (5))]
+      passwordContent[i+2] = allRandomSpec[Math.floor(Math.random() * (5))]
+      passwordContent[i+3] = allRandomSpec[Math.floor(Math.random() * (5))]
+      passwordContent[i+4] = allRandomSpec[Math.floor(Math.random() * (5))]
     }
   }
   alert("your password is " + (passwordContent.join('')));
