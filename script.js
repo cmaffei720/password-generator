@@ -50,100 +50,181 @@ var lowerNumber = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 var upperNumber = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 //var specCharacters = ["@","#","%","<","^","<","\"]
 
+function makeid(length) {
+  var result           = '';
+  var characters       = '!@#$%^&*()?><|';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+makeid(1)
+var specCharacter = makeid(1)
+console.log(makeid(1))
+
+function makeid2(length) {
+  var result           = '';
+  var characters       = '!@#$%^&*()?><|';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+makeid2(1)
+ var specCharacter2 = makeid2(1)
+console.log(makeid2(1))
+
+function makeid3(length) {
+  var result           = '';
+  var characters       = '!@#$%^&*()?><|';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+makeid3(1)
+ var specCharacter3 = makeid3(1)
+console.log(makeid3(1))
+
+function makeid4(length) {
+  var result           = '';
+  var characters       = '!@#$%^&*()?><|';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+makeid4(1)
+ var specCharacter4 = makeid4(1)
+console.log(makeid4(1))
+
+function makeid5(length) {
+  var result           = '';
+  var characters       = '!@#$%^&*()?><|';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+makeid5(1)
+ var specCharacter5 = makeid5(1)
+console.log(makeid5(1))
+
 function generatePassword (passwordLength, passwordLowCharacters, passwordUpCharacters, passwordNumericCharacters, passwordSpecialCharacters) {
   var passwordContent = ["a","b","c"]
   passwordContent.length = passwordLength
-  for (i = 0; i < passwordLength - 3; i++) {
+  for (i = 0; i < passwordLength - 4; i++) {
     if (passwordLowCharacters === true && passwordUpCharacters === true && passwordNumericCharacters === true && passwordSpecialCharacters === true){
       passwordContent[i] = Loweruppernumber[Math.floor(Math.random() * (62))]
       passwordContent[i+1] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+      passwordContent[i+4] = specCharacter
     }
     else if (passwordLowCharacters === true && passwordUpCharacters === true && passwordNumericCharacters === true && passwordSpecialCharacters === false){
       passwordContent[i] = Loweruppernumber[Math.floor(Math.random() * (62))]
       passwordContent[i+1] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+      passwordContent[i+4] = alphabetLower[Math.floor(Math.random() * (26))]
     }
     else if (passwordLowCharacters === true && passwordUpCharacters === true && passwordNumericCharacters === false && passwordSpecialCharacters === true){
       passwordContent[i] = Lowerupper[Math.floor(Math.random() * (52))]
       passwordContent[i+1] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = alphabetLower[Math.floor(Math.random() * (26))]
+      passwordContent[i+4] = specCharacter
     }
     else if (passwordLowCharacters === true && passwordUpCharacters === true && passwordNumericCharacters === false && passwordSpecialCharacters === false){
       passwordContent[i] = Lowerupper[Math.floor(Math.random() * (52))]
       passwordContent[i+1] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = alphabetLower[Math.floor(Math.random() * (26))]
+      passwordContent[i+4] = alphabetLower[Math.floor(Math.random() * (26))]
     }
     else if (passwordLowCharacters === true && passwordUpCharacters === false && passwordNumericCharacters === true && passwordSpecialCharacters === true){
       passwordContent[i] = lowerNumber[Math.floor(Math.random() * (36))]
       passwordContent[i+1] = numericCharacters[Math.floor(Math.random() * (10))]
       passwordContent[i+2] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+      passwordContent[i+4] = specCharacter
     }
     else if (passwordLowCharacters === true && passwordUpCharacters === false && passwordNumericCharacters === true && passwordSpecialCharacters === false){
       passwordContent[i] = lowerNumber[Math.floor(Math.random() * (36))]
       passwordContent[i+1] = numericCharacters[Math.floor(Math.random() * (10))]
       passwordContent[i+2] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+      passwordContent[i+4] = alphabetLower[Math.floor(Math.random() * (26))]
     }
     else if (passwordLowCharacters === true && passwordUpCharacters === false && passwordNumericCharacters === false && passwordSpecialCharacters === true){
-      passwordContent[i+3] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+1] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+2] = alphabetLower[Math.floor(Math.random() * (26))]
+      passwordContent[i+3] = alphabetLower[Math.floor(Math.random() * (26))]
+      passwordContent[i+4] = specCharacter
     }
     else if (passwordLowCharacters === true && passwordUpCharacters === false && passwordNumericCharacters === false && passwordSpecialCharacters === false){
-      passwordContent[i+3] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+1] = alphabetLower[Math.floor(Math.random() * (26))]
       passwordContent[i+2] = alphabetLower[Math.floor(Math.random() * (26))]
+      passwordContent[i+3] = alphabetLower[Math.floor(Math.random() * (26))]
+      passwordContent[i+4] = alphabetLower[Math.floor(Math.random() * (26))]
     }
     else if (passwordLowCharacters === false && passwordUpCharacters === true && passwordNumericCharacters === true && passwordSpecialCharacters === true){
       passwordContent[i] = upperNumber[Math.floor(Math.random() * (36))]
       passwordContent[i+1] = numericCharacters[Math.floor(Math.random() * (10))]
       passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+      passwordContent[i+4] = specCharacter
     }
     else if (passwordLowCharacters === false && passwordUpCharacters === true && passwordNumericCharacters === true && passwordSpecialCharacters === false){
       passwordContent[i] = upperNumber[Math.floor(Math.random() * (36))]
       passwordContent[i+1] = numericCharacters[Math.floor(Math.random() * (10))]
       passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+      passwordContent[i+4] = alphabetUpper[Math.floor(Math.random() * (26))]
     }
     else if (passwordLowCharacters === false && passwordUpCharacters === true && passwordNumericCharacters === false && passwordSpecialCharacters === true){
       passwordContent[i] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+1] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
       passwordContent[i+3] = alphabetUpper[Math.floor(Math.random() * (26))]
+      passwordContent[i+4] = specCharacter
   }
     else if (passwordLowCharacters === false && passwordUpCharacters === true && passwordNumericCharacters === false && passwordSpecialCharacters === false){
     passwordContent[i] = alphabetUpper[Math.floor(Math.random() * (26))]
     passwordContent[i+1] = alphabetUpper[Math.floor(Math.random() * (26))]
     passwordContent[i+2] = alphabetUpper[Math.floor(Math.random() * (26))]
     passwordContent[i+3] = alphabetUpper[Math.floor(Math.random() * (26))]
+    passwordContent[i+4] = alphabetUpper[Math.floor(Math.random() * (26))]
   }
   else if (passwordLowCharacters === false && passwordUpCharacters === false && passwordNumericCharacters === true && passwordSpecialCharacters === true){
     passwordContent[i] = numericCharacters[Math.floor(Math.random() * (10))]
     passwordContent[i+1] = numericCharacters[Math.floor(Math.random() * (10))]
     passwordContent[i+2] = numericCharacters[Math.floor(Math.random() * (10))]
     passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+    passwordContent[i+4] = specCharacter
   }
   else if (passwordLowCharacters === false && passwordUpCharacters === false && passwordNumericCharacters === true && passwordSpecialCharacters === false){
     passwordContent[i] = numericCharacters[Math.floor(Math.random() * (10))]
     passwordContent[i+1] = numericCharacters[Math.floor(Math.random() * (10))]
     passwordContent[i+2] = numericCharacters[Math.floor(Math.random() * (10))]
     passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
+    passwordContent[i+4] = numericCharacters[Math.floor(Math.random() * (10))]
   }
-    // else if (passwordLowCharacters === false && passwordUpCharacters === false && passwordNumericCharacters === false && passwordSpecialCharacters === true){
-    // passwordContent[i+3] = numericCharacters[Math.floor(Math.random() * (10))]
-    //passwordContent[i] = numericCharacters[Math.floor(Math.random() * (10))]
-    //passwordContent[i+1] = numericCharacters[Math.floor(Math.random() * (10))]
-    //passwordContent[i+2] = numericCharacters[Math.floor(Math.random() * (10))]
-    //}
+    else if (passwordLowCharacters === false && passwordUpCharacters === false && passwordNumericCharacters === false && passwordSpecialCharacters === true){
+      passwordContent[i] = specCharacter
+      passwordContent[i+1] = specCharacter2
+      passwordContent[i+2] = specCharacter3
+      passwordContent[i+3] = specCharacter4
+      passwordContent[i+4] = specCharacter5
+    }
   }
   alert("your password is " + (passwordContent.join('')));
   console.log(passwordContent)
